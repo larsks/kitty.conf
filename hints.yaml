@@ -1,0 +1,22 @@
+---
+- pattern: "(rh|bz|rhbz):? ?#?(\\\\d+)"
+  action: xdg--open https://bugzilla.redhat.com/$2
+  case-insensitive: true
+- pattern: "lp: ?#?(\\\\d+)"
+  action: xdg--open https://bugs.launchpad.net/bugs/$1
+  case-insensitive: true
+- pattern: "(closes|partial|related)-bug: #?(\\\\d+)"
+  action: xdg--open https://bugs.launchpad.net/bugs/$2
+  case-insensitive: true
+- pattern: "(depends-on|change-id): (\\\\w+)"
+  action: xdg--open https://review.opendev.org/#/q/$2
+  case-insensitive: true
+- pattern: "RCM-(\\\\d+)"
+  action: xdg--open https://projects.engineering.redhat.com/browse/RCM-$1
+  case-insensitive: false
+- pattern: "CENTRALCI-(\\\\d+)"
+  action: xdg--open https://projects.engineering.redhat.com/browse/CENTRALCI-$1
+  case-insensitive: false
+- pattern: "SEV-?(\\\\d+):? ?(\\\\d+)"
+  action: xdg--open https://access.redhat.com/support/cases/#/case/$2
+  case-insensitive: false
